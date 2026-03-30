@@ -10,6 +10,10 @@ from oneoff.traslado_consignacion.batch import (
     load_transfer_rows,
     run_batch,
 )
+from src.siigo.infraestructure.schema.warehouse_transfer import (
+    WarehouseTransferResponseSchema,
+)
+from src.siigo.infraestructure.servicespd import ServicesPdSiigoWarehouseTransferClient
 
 
 CSV_HEADERS = [
@@ -114,6 +118,7 @@ def test_ledger_state_bloquea_eventos_previos(tmp_path: Path) -> None:
                 json.dumps({"operation_key": "ok", "event_type": "success"}),
                 json.dumps({"operation_key": "amb", "event_type": "sending"}),
                 json.dumps({"operation_key": "err", "event_type": "http_error"}),
+                json.dumps({"operation_key": "dup", "event_type": "duplicate_error"}),
             ]
         )
         + "\n",
@@ -122,26 +127,56 @@ def test_ledger_state_bloquea_eventos_previos(tmp_path: Path) -> None:
 
     ledger = LedgerState(ledger_path)
 
-    assert ledger.plan_status("ok", allow_retry_failed=False) == (
-        "skip",
-        "already_succeeded",
-        "success",
-    )
-    assert ledger.plan_status("amb", allow_retry_failed=False) == (
-        "skip",
-        "ambiguous_previous_attempt",
-        "sending",
-    )
-    assert ledger.plan_status("err", allow_retry_failed=False) == (
+    assert ledger.plan_status(
+        "ok",
+        allow_retry_failed=False,
+        allow_retry_duplicate=False,
+        allow_retry_success=False,
+    ) == ("skip", "already_succeeded", "success")
+    assert ledger.plan_status(
+        "ok",
+        allow_retry_failed=False,
+        allow_retry_duplicate=False,
+        allow_retry_success=True,
+    ) == ("pending", None, "success")
+    assert ledger.plan_status(
+        "amb",
+        allow_retry_failed=False,
+        allow_retry_duplicate=False,
+        allow_retry_success=False,
+    ) == ("skip", "ambiguous_previous_attempt", "sending")
+    assert ledger.plan_status(
+        "err",
+        allow_retry_failed=False,
+        allow_retry_duplicate=False,
+        allow_retry_success=False,
+    ) == (
         "skip",
         "previous_http_error",
         "http_error",
     )
-    assert ledger.plan_status("err", allow_retry_failed=True) == (
+    assert ledger.plan_status(
+        "err",
+        allow_retry_failed=True,
+        allow_retry_duplicate=False,
+        allow_retry_success=False,
+    ) == (
         "pending",
         None,
         "http_error",
     )
+    assert ledger.plan_status(
+        "dup",
+        allow_retry_failed=False,
+        allow_retry_duplicate=False,
+        allow_retry_success=False,
+    ) == ("skip", "already_reported_duplicate", "duplicate_error")
+    assert ledger.plan_status(
+        "dup",
+        allow_retry_failed=False,
+        allow_retry_duplicate=True,
+        allow_retry_success=False,
+    ) == ("pending", None, "duplicate_error")
 
 
 @pytest.mark.anyio
@@ -190,7 +225,10 @@ async def test_run_batch_dry_run_respeta_ledger_y_limit(tmp_path: Path) -> None:
         output_dir=output_dir,
         execute=False,
         allow_retry_failed=False,
+        allow_retry_duplicate=False,
+        allow_retry_success=False,
         limit=1,
+        batch_size=None,
     )
 
     assert summary["counts"] == {
@@ -218,3 +256,62 @@ async def test_run_batch_dry_run_respeta_ledger_y_limit(tmp_path: Path) -> None:
     assert rows[1]["skip_reason"] == "already_succeeded"
     assert rows[2]["plan_status"] == "skip"
     assert rows[2]["skip_reason"] == "outside_limit"
+
+
+@pytest.mark.anyio
+async def test_run_batch_execute_emite_progreso(tmp_path: Path, monkeypatch) -> None:
+    csv_path = tmp_path / "traslados.csv"
+    write_csv(
+        csv_path,
+        [
+            make_row(
+                code="A",
+                product_code="1001",
+                cantidad_a_trasladar="2.0",
+                cantidad_pendiente="0.0",
+                estado="completo",
+            ),
+            make_row(
+                code="B",
+                product_code="1002",
+                cantidad_a_trasladar="1.0",
+                cantidad_pendiente="0.0",
+                estado="completo",
+            ),
+        ],
+    )
+    output_dir = tmp_path / "output"
+    progress_messages: list[str] = []
+
+    async def fake_transfer(self, **kwargs):
+        assert kwargs["fecha"] == date(2026, 3, 30)
+        assert len(kwargs["items"]) == 2
+        return WarehouseTransferResponseSchema(transfer_id=555001)
+
+    monkeypatch.setattr(
+        ServicesPdSiigoWarehouseTransferClient,
+        "crear_traslado_bodega",
+        fake_transfer,
+    )
+
+    summary = await run_batch(
+        csv_path=csv_path,
+        doc_date=date(2026, 3, 30),
+        warehouse_code=39,
+        destination_warehouse_code=-1,
+        run_id="execute-test",
+        output_dir=output_dir,
+        execute=True,
+        allow_retry_failed=False,
+        allow_retry_duplicate=False,
+        allow_retry_success=False,
+        limit=None,
+        batch_size=None,
+        progress_hook=progress_messages.append,
+    )
+
+    assert summary["counts"]["success"] == 2
+    assert any(message.startswith("Plan listo:") for message in progress_messages)
+    assert any("[batch 1/1] Enviando" in message for message in progress_messages)
+    assert any("[batch 1/1] OK" in message for message in progress_messages)
+    assert any("Run completado." in message for message in progress_messages)

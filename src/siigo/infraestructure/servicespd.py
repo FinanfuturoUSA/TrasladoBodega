@@ -101,20 +101,13 @@ class ServicesPdSiigoWarehouseTransferClient(ServicesPdSiigoClient):
     async def crear_traslado_bodega(
         self,
         fecha: date,
-        codigo_producto: int,
-        cantidad: int | float,
-        warehouse_code: int,
-        destination_warehouse_code: int,
-    ) -> WarehouseTransferResponseSchema:
+        items: list[WarehouseTransferItemSchema],
+    ) -> WarehouseTransferResponseSchema | None:
+        if not items:
+            return None
+
         payload = WarehouseTransferPayloadSchema(
-            Items=[
-                WarehouseTransferItemSchema(
-                    ProductCode=codigo_producto,
-                    WarehouseCode=warehouse_code,
-                    DestinationWarehouseCode=destination_warehouse_code,
-                    Quantity=cantidad,
-                )
-            ],
+            Items=items,
             Entry=WarehouseTransferEntrySchema(DocDate=fecha),
         )
         request = TypedJsonRequest(

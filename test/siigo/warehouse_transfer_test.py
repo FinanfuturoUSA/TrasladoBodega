@@ -40,10 +40,14 @@ async def test_crear_traslado_bodega_envia_payload_minimo_correcto(
 
         resultado = await client.crear_traslado_bodega(
             fecha=date(2026, 3, 30),
-            codigo_producto=161151,
-            cantidad=1,
-            warehouse_code=37,
-            destination_warehouse_code=-1,
+            items=[
+                WarehouseTransferItemSchema(
+                    ProductCode=161151,
+                    WarehouseCode=37,
+                    DestinationWarehouseCode=-1,
+                    Quantity=1,
+                )
+            ],
         )
 
         mock_req.assert_called_once()
@@ -69,8 +73,79 @@ async def test_crear_traslado_bodega_envia_payload_minimo_correcto(
         assert "EntryType" not in serialized_payload
         assert "ModelType" not in serialized_payload
 
+        assert resultado is not None
         assert isinstance(resultado, WarehouseTransferResponseSchema)
         assert resultado.transfer_id == 1039623
+
+
+@pytest.mark.anyio
+async def test_crear_traslado_bodega_envia_varios_items(
+    client: ServicesPdSiigoWarehouseTransferClient,
+):
+    with patch.object(
+        ServicesPdSiigoWarehouseTransferClient,
+        "scalar_json_request",
+        new_callable=AsyncMock,
+    ) as mock_req:
+        mock_req.return_value = 1039624
+
+        resultado = await client.crear_traslado_bodega(
+            fecha=date(2026, 3, 30),
+            items=[
+                WarehouseTransferItemSchema(
+                    ProductCode=161151,
+                    WarehouseCode=39,
+                    DestinationWarehouseCode=-1,
+                    Quantity=1,
+                ),
+                WarehouseTransferItemSchema(
+                    ProductCode=91675,
+                    WarehouseCode=39,
+                    DestinationWarehouseCode=-1,
+                    Quantity=2,
+                ),
+            ],
+        )
+
+        mock_req.assert_called_once()
+        (request,), _ = mock_req.call_args
+        assert request.payload.model_dump(exclude_none=True) == {
+            "Items": [
+                {
+                    "ProductCode": 161151,
+                    "WarehouseCode": 39,
+                    "DestinationWarehouseCode": -1,
+                    "Quantity": 1,
+                },
+                {
+                    "ProductCode": 91675,
+                    "WarehouseCode": 39,
+                    "DestinationWarehouseCode": -1,
+                    "Quantity": 2,
+                },
+            ],
+            "Entry": {"DocDate": "20260330"},
+        }
+        assert resultado is not None
+        assert resultado.transfer_id == 1039624
+
+
+@pytest.mark.anyio
+async def test_crear_traslado_bodega_no_hace_request_sin_items(
+    client: ServicesPdSiigoWarehouseTransferClient,
+):
+    with patch.object(
+        ServicesPdSiigoWarehouseTransferClient,
+        "scalar_json_request",
+        new_callable=AsyncMock,
+    ) as mock_req:
+        resultado = await client.crear_traslado_bodega(
+            fecha=date(2026, 3, 30),
+            items=[],
+        )
+
+        mock_req.assert_not_called()
+        assert resultado is None
 
 
 @pytest.mark.anyio

@@ -81,6 +81,30 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--allow-retry-duplicate",
+        action="store_true",
+        help=(
+            "Permite reintentar filas cuyo ultimo evento fue duplicate_error. "
+            "Usalo si cambiaste de estrategia y necesitas volver a incluirlas."
+        ),
+    )
+    parser.add_argument(
+        "--allow-retry-success",
+        action="store_true",
+        help=(
+            "Permite volver a incluir filas con success previo en el ledger. "
+            "Usalo solo si ya eliminaste manualmente ese traslado en Siigo."
+        ),
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=None,
+        help=(
+            "Cantidad de items por traslado. Default: todos los pendientes en una sola operacion."
+        ),
+    )
+    parser.add_argument(
         "--execute",
         action="store_true",
         help="Ejecuta los traslados reales. Si no se envia, corre en dry-run.",
@@ -101,6 +125,8 @@ async def main() -> None:
         raise FileNotFoundError(f"No existe el archivo fuente: {input_path}")
     if args.limit is not None and args.limit <= 0:
         raise ValueError("--limit debe ser mayor que cero")
+    if args.batch_size is not None and args.batch_size <= 0:
+        raise ValueError("--batch-size debe ser mayor que cero")
 
     summary = await run_batch(
         csv_path=input_path,
@@ -111,7 +137,11 @@ async def main() -> None:
         output_dir=output_dir,
         execute=args.execute,
         allow_retry_failed=args.allow_retry_failed,
+        allow_retry_duplicate=args.allow_retry_duplicate,
+        allow_retry_success=args.allow_retry_success,
         limit=args.limit,
+        batch_size=args.batch_size,
+        progress_hook=print,
     )
 
     counts = summary["counts"]

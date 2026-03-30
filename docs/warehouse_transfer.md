@@ -199,14 +199,22 @@ Clases agregadas:
 Metodo expuesto:
 
 ```python
+from src.siigo.infraestructure.schema.warehouse_transfer import WarehouseTransferItemSchema
+
 await ServicesPdSiigoWarehouseTransferClient().crear_traslado_bodega(
     fecha=date(2026, 3, 18),
-    codigo_producto=161151,
-    cantidad=10,
-    warehouse_code=37,
-    destination_warehouse_code=-1,
+    items=[
+        WarehouseTransferItemSchema(
+            ProductCode=161151,
+            WarehouseCode=37,
+            DestinationWarehouseCode=-1,
+            Quantity=10,
+        )
+    ],
 )
 ```
+
+Si `items=[]`, el metodo no envia ninguna peticion y retorna `None`.
 
 ### Schemas
 

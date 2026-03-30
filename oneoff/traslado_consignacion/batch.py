@@ -6,9 +6,12 @@ from dataclasses import asdict, dataclass
 from datetime import UTC, date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from src.shared.infraestructure.httpclient.base import ClientException
+from src.siigo.infraestructure.schema.warehouse_transfer import (
+    WarehouseTransferItemSchema,
+)
 from src.siigo.infraestructure.servicespd import ServicesPdSiigoWarehouseTransferClient
 
 EXECUTABLE_STATES = {"completo", "parcial"}
@@ -74,6 +77,7 @@ class PlanRowStatus:
     transfer_id: int | None = None
     error_message: str | None = None
     status_code: int | None = None
+    batch_operation_key: str | None = None
 
     def to_csv_dict(self) -> dict[str, Any]:
         return {
@@ -93,6 +97,7 @@ class PlanRowStatus:
             "transfer_id": self.transfer_id or "",
             "status_code": self.status_code or "",
             "error_message": self.error_message or "",
+            "batch_operation_key": self.batch_operation_key or "",
         }
 
 
@@ -260,17 +265,19 @@ class LedgerState:
         operation_key: str,
         *,
         allow_retry_failed: bool,
+        allow_retry_duplicate: bool,
+        allow_retry_success: bool,
     ) -> tuple[str, str | None, str | None]:
         last_event = self.last_event(operation_key)
         if last_event is None:
             return "pending", None, None
 
         last_event_type = str(last_event.get("event_type", ""))
-        if last_event_type == "success":
+        if last_event_type == "success" and not allow_retry_success:
             return "skip", "already_succeeded", last_event_type
         if last_event_type in {"sending", "ambiguous_error"}:
             return "skip", "ambiguous_previous_attempt", last_event_type
-        if last_event_type == "duplicate_error":
+        if last_event_type == "duplicate_error" and not allow_retry_duplicate:
             return "skip", "already_reported_duplicate", last_event_type
         if last_event_type == "http_error" and not allow_retry_failed:
             return "skip", "previous_http_error", last_event_type
@@ -331,6 +338,40 @@ def build_event(
     return event
 
 
+def chunk_indexes(indexes: list[int], batch_size: int | None) -> list[list[int]]:
+    if batch_size is None:
+        return [indexes] if indexes else []
+    return [
+        indexes[start : start + batch_size]
+        for start in range(0, len(indexes), batch_size)
+    ]
+
+
+def build_batch_operation_key(rows: list[TransferBatchRow]) -> str:
+    first = rows[0]
+    last = rows[-1]
+    total_quantity = sum(row.cantidad_a_trasladar for row in rows)
+    return (
+        f"{first.doc_date.strftime('%Y%m%d')}|{first.warehouse_code}|"
+        f"{first.destination_warehouse_code}|batch|{first.csv_line_number}|"
+        f"{last.csv_line_number}|{len(rows)}|{total_quantity}"
+    )
+
+
+def build_batch_items(
+    rows: list[TransferBatchRow],
+) -> list[WarehouseTransferItemSchema]:
+    return [
+        WarehouseTransferItemSchema(
+            ProductCode=row.product_code,
+            WarehouseCode=row.warehouse_code,
+            DestinationWarehouseCode=row.destination_warehouse_code,
+            Quantity=row.cantidad_a_trasladar,
+        )
+        for row in rows
+    ]
+
+
 def write_plan_csv(output_path: Path, plan_rows: list[PlanRowStatus]) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = (
@@ -353,6 +394,7 @@ def write_plan_csv(output_path: Path, plan_rows: list[PlanRowStatus]) -> None:
             "transfer_id",
             "status_code",
             "error_message",
+            "batch_operation_key",
         ]
     )
 
@@ -421,8 +463,16 @@ async def run_batch(
     output_dir: Path,
     execute: bool,
     allow_retry_failed: bool,
+    allow_retry_duplicate: bool,
+    allow_retry_success: bool,
     limit: int | None,
+    batch_size: int | None,
+    progress_hook: Callable[[str], None] | None = None,
 ) -> dict[str, Any]:
+    def emit_progress(message: str) -> None:
+        if progress_hook is not None:
+            progress_hook(message)
+
     ledger_path = output_dir / "ledger.jsonl"
     run_dir = output_dir / run_id
     plan_path = run_dir / "plan.csv"
@@ -447,6 +497,8 @@ async def run_batch(
         plan_status, skip_reason, last_event_type = ledger.plan_status(
             row.operation_key,
             allow_retry_failed=allow_retry_failed,
+            allow_retry_duplicate=allow_retry_duplicate,
+            allow_retry_success=allow_retry_success,
         )
         plan_rows.append(
             PlanRowStatus(
@@ -471,9 +523,19 @@ async def run_batch(
                     last_event_type=item.last_event_type,
                 )
 
+    batches = chunk_indexes(eligible_indexes, batch_size)
+    emit_progress(
+        "Plan listo: "
+        f"total={len(plan_rows)} "
+        f"pendientes={len(eligible_indexes)} "
+        f"skip={sum(1 for item in plan_rows if item.plan_status == 'skip')} "
+        f"batches={len(batches)} "
+        f"fecha={doc_date.strftime('%d/%m/%Y')}"
+    )
     write_plan_csv(plan_path, plan_rows)
 
     if not execute:
+        emit_progress(f"Dry-run completado. Plan guardado en {plan_path}")
         summary = build_summary(
             run_id=run_id,
             execute=execute,
@@ -487,52 +549,86 @@ async def run_batch(
         return summary
 
     client = ServicesPdSiigoWarehouseTransferClient()
+    total_to_process = len(eligible_indexes)
 
-    for index in eligible_indexes:
-        item = plan_rows[index]
-        row = item.row
-        sending_event = build_event(
-            event_type="sending",
-            run_id=run_id,
-            row=row,
-            execute=execute,
+    if total_to_process == 0:
+        emit_progress("No hay operaciones pendientes por ejecutar.")
+
+    for batch_sequence, batch_indexes in enumerate(batches, start=1):
+        batch_rows = [plan_rows[index].row for index in batch_indexes]
+        batch_operation_key = build_batch_operation_key(batch_rows)
+        total_batch_quantity = sum(row.cantidad_a_trasladar for row in batch_rows)
+        emit_progress(
+            f"[batch {batch_sequence}/{len(batches)}] Enviando "
+            f"items={len(batch_rows)} qty_total={total_batch_quantity} "
+            f"lineas={batch_rows[0].csv_line_number}-{batch_rows[-1].csv_line_number}"
         )
-        logger.append(sending_event)
-        ledger.record(sending_event)
-
-        try:
-            response = await client.crear_traslado_bodega(
-                fecha=row.doc_date,
-                codigo_producto=row.product_code,
-                cantidad=row.cantidad_a_trasladar,
-                warehouse_code=row.warehouse_code,
-                destination_warehouse_code=row.destination_warehouse_code,
-            )
-        except ClientException as error:
-            event_type, stop_execution = classify_client_exception(error)
-            error_event = build_event(
-                event_type=event_type,
+        for row in batch_rows:
+            sending_event = build_event(
+                event_type="sending",
                 run_id=run_id,
                 row=row,
                 execute=execute,
-                status_code=error.status_code,
-                response=error.response,
-                response_type=error.response_type,
-                message=error.msg,
+                batch_operation_key=batch_operation_key,
+                batch_sequence=batch_sequence,
+                batch_size=len(batch_rows),
+                batch_quantity=total_batch_quantity,
             )
-            logger.append(error_event)
-            ledger.record(error_event)
-            plan_rows[index] = PlanRowStatus(
-                row=row,
-                plan_status="error",
-                skip_reason=event_type,
-                last_event_type=event_type,
-                error_message=error.msg,
-                status_code=error.status_code,
+            logger.append(sending_event)
+            ledger.record(sending_event)
+
+        try:
+            response = await client.crear_traslado_bodega(
+                fecha=doc_date,
+                items=build_batch_items(batch_rows),
+            )
+            if response is None:
+                raise RuntimeError("El batch no genero items para trasladar")
+        except ClientException as error:
+            event_type, stop_execution = classify_client_exception(error)
+            for index in batch_indexes:
+                row = plan_rows[index].row
+                error_event = build_event(
+                    event_type=event_type,
+                    run_id=run_id,
+                    row=row,
+                    execute=execute,
+                    status_code=error.status_code,
+                    response=error.response,
+                    response_type=error.response_type,
+                    message=error.msg,
+                    batch_operation_key=batch_operation_key,
+                    batch_sequence=batch_sequence,
+                    batch_size=len(batch_rows),
+                    batch_quantity=total_batch_quantity,
+                )
+                logger.append(error_event)
+                ledger.record(error_event)
+                plan_rows[index] = PlanRowStatus(
+                    row=row,
+                    plan_status="error",
+                    skip_reason=event_type,
+                    last_event_type=event_type,
+                    error_message=error.msg,
+                    status_code=error.status_code,
+                    batch_operation_key=batch_operation_key,
+                )
+            emit_progress(
+                f"[batch {batch_sequence}/{len(batches)}] Error {event_type} "
+                f"status={error.status_code} items={len(batch_rows)} msg={error.msg}"
             )
 
             if stop_execution:
-                for rest_index in eligible_indexes[eligible_indexes.index(index) + 1 :]:
+                emit_progress(
+                    "Ejecucion detenida por seguridad despues del error; "
+                    "revisa events.jsonl y summary.json antes de reintentar."
+                )
+                remaining_indexes = [
+                    rest_index
+                    for future_batch in batches[batch_sequence:]
+                    for rest_index in future_batch
+                ]
+                for rest_index in remaining_indexes:
                     rest_item = plan_rows[rest_index]
                     if rest_item.plan_status == "pending":
                         plan_rows[rest_index] = PlanRowStatus(
@@ -543,25 +639,45 @@ async def run_batch(
                         )
                 break
         except Exception as error:
-            ambiguous_event = build_event(
-                event_type="ambiguous_error",
-                run_id=run_id,
-                row=row,
-                execute=execute,
-                response=str(error),
-                response_type=type(error).__name__,
-                message=str(error),
+            for index in batch_indexes:
+                row = plan_rows[index].row
+                ambiguous_event = build_event(
+                    event_type="ambiguous_error",
+                    run_id=run_id,
+                    row=row,
+                    execute=execute,
+                    response=str(error),
+                    response_type=type(error).__name__,
+                    message=str(error),
+                    batch_operation_key=batch_operation_key,
+                    batch_sequence=batch_sequence,
+                    batch_size=len(batch_rows),
+                    batch_quantity=total_batch_quantity,
+                )
+                logger.append(ambiguous_event)
+                ledger.record(ambiguous_event)
+                plan_rows[index] = PlanRowStatus(
+                    row=row,
+                    plan_status="error",
+                    skip_reason="ambiguous_error",
+                    last_event_type="ambiguous_error",
+                    error_message=str(error),
+                    batch_operation_key=batch_operation_key,
+                )
+            emit_progress(
+                f"[batch {batch_sequence}/{len(batches)}] Error ambiguous_error "
+                f"items={len(batch_rows)} msg={error}"
             )
-            logger.append(ambiguous_event)
-            ledger.record(ambiguous_event)
-            plan_rows[index] = PlanRowStatus(
-                row=row,
-                plan_status="error",
-                skip_reason="ambiguous_error",
-                last_event_type="ambiguous_error",
-                error_message=str(error),
+            emit_progress(
+                "Ejecucion detenida por seguridad despues de un error ambiguo; "
+                "revisa events.jsonl y summary.json antes de reintentar."
             )
-            for rest_index in eligible_indexes[eligible_indexes.index(index) + 1 :]:
+            remaining_indexes = [
+                rest_index
+                for future_batch in batches[batch_sequence:]
+                for rest_index in future_batch
+            ]
+            for rest_index in remaining_indexes:
                 rest_item = plan_rows[rest_index]
                 if rest_item.plan_status == "pending":
                     plan_rows[rest_index] = PlanRowStatus(
@@ -572,20 +688,31 @@ async def run_batch(
                     )
             break
         else:
-            success_event = build_event(
-                event_type="success",
-                run_id=run_id,
-                row=row,
-                execute=execute,
-                transfer_id=response.transfer_id,
-            )
-            logger.append(success_event)
-            ledger.record(success_event)
-            plan_rows[index] = PlanRowStatus(
-                row=row,
-                plan_status="success",
-                last_event_type="success",
-                transfer_id=response.transfer_id,
+            for index in batch_indexes:
+                row = plan_rows[index].row
+                success_event = build_event(
+                    event_type="success",
+                    run_id=run_id,
+                    row=row,
+                    execute=execute,
+                    transfer_id=response.transfer_id,
+                    batch_operation_key=batch_operation_key,
+                    batch_sequence=batch_sequence,
+                    batch_size=len(batch_rows),
+                    batch_quantity=total_batch_quantity,
+                )
+                logger.append(success_event)
+                ledger.record(success_event)
+                plan_rows[index] = PlanRowStatus(
+                    row=row,
+                    plan_status="success",
+                    last_event_type="success",
+                    transfer_id=response.transfer_id,
+                    batch_operation_key=batch_operation_key,
+                )
+            emit_progress(
+                f"[batch {batch_sequence}/{len(batches)}] OK "
+                f"items={len(batch_rows)} transfer_id={response.transfer_id}"
             )
 
     write_plan_csv(plan_path, plan_rows)
@@ -599,4 +726,5 @@ async def run_batch(
         plan_rows=plan_rows,
     )
     write_summary(summary_path, summary)
+    emit_progress(f"Run completado. Resumen guardado en {summary_path}")
     return summary
