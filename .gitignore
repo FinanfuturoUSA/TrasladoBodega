@@ -14,3 +14,6 @@ wheels/
 
 # Archivos temporales
 /tmp/**
+
+# Salidas de procesos one-off
+/oneoff/**/output/
