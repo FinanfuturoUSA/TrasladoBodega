@@ -8,6 +8,7 @@ dependencies = [
     "dotenv>=0.9.9",
     "httpx>=0.28.1",
     "pandas>=3.0.1",
+    "pandas-stubs>=3.0.0.260204",
     "pydantic>=2.12.5",
     "pytest>=9.0.2",
 ]

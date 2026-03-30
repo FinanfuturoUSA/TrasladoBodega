@@ -3,7 +3,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 BASE_DIR = Path(__file__).resolve().parents[1]
 INPUT_PATH = BASE_DIR / "data" / "saldo_inventaio.json"
 OUTPUT_PATH = Path(__file__).resolve().with_name("traslado_movimientos.csv")
