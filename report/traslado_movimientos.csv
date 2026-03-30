@@ -154,7 +154,7 @@ BOUQUETMEDIANON,BOUQUET MEDIANO NAVIDAD,SANTACOLOMO,139184,b9fdb754-5431-4b18-83
 BUTC65CMEA,BUTACO CUBICO 65 CM  EN ARTESANO,TUCURINCA CONS,64267,128dbd8f-8c40-4cde-97b8-4c7c004a48fa,CONSIG01 - Inventario en consignación,Sin asignar,202502,202502,2.0,2.0,2.0,0.0,completo
 BUZOENLANA2,BUZO EN LANA TALLA 2 AÑO,ALMENDRA,26994,5ededaa2-5e07-4231-98b0-34b30af2aab1,CONSIG01 - Inventario en consignación,Sin asignar,202510,202601,4.0,1.0,1.0,0.0,completo
 C1032E001,ARETES 1032 MINI HOOPS,FENOMENA,91987,640f9f72-ba72-4782-8a21-91c1e30cb51b,CONSIG01 - Inventario en consignación,Sin asignar,202506,202510,1.0,1.0,1.0,0.0,completo
-C1032E004,XS 1032 HOOPS,FENOMENA,139282,78275c02-1e31-4a95-8939-48dce8afa711,CONSIG01 - Inventario en consignación,Sin asignar,202512,202512,3.0,1.0,1.0,0.0,completo
+C1032E004,XS 1032 HOOPS,FENOMENA,139282,78275c02-1e31-4a95-8939-48dce8afa711,CONSIG01 - Inventario en consignación,Sin asignar,202603,202512,2.0,1.0,1.0,0.0,completo
 C1032E00GA,EARCUFF SENCILLO ROSADO/EARRINGS/ARETES,FENOMENA,63265,46356739-45ad-4deb-b0e4-5a7ecab025fc,CONSIG01 - Inventario en consignación,Sin asignar,202504,202504,3.0,3.0,3.0,0.0,completo
 C1032E00Z,EARCUFF SENCILLO AZUL/EARRINGS/ARETES,FENOMENA,63266,667997d6-db61-4ed8-95c2-305d4513d086,CONSIG01 - Inventario en consignación,Sin asignar,202504,202504,2.0,2.0,2.0,0.0,completo
 CAJAFOSF,CAJA DE FOSFOROS BROMELIA,ESCRIBANA,79967,dbff5f61-2f45-4b52-b62e-b4f0c02fb370,CONSIG01 - Inventario en consignación,Sin asignar,202506,202506,1.0,1.0,1.0,0.0,completo
@@ -361,14 +361,14 @@ TCS11U,Top Capa Serena Negro,PI AND GAMA,150366,7bde512f-b5c7-4865-b88d-ac5dc49c
 TOALLABEBEBUBBLEPOP,TOALLA BEBE BUBBLE POP,PONCHO,114857,559d6712-6667-4168-a06f-343953bab134,CONSIG01 - Inventario en consignación,Sin asignar,202512,202512,2.0,2.0,2.0,0.0,completo
 TOALLACRYSTALBAY,TOALLA KIDS Crystal Bay,Poncho,78061,d15cdd9c-790b-448e-8f35-4519d355d6ad,CONSIG01 - Inventario en consignación,Sin asignar,202504,202512,1.0,1.0,1.0,0.0,completo
 TORTILLEROCANASTASICILIA,TORTILLERO CON CANASTA SICILIA,ABITA,126201,1d45e6b3-63d5-43f3-a024-958096d282dc,CONSIG01 - Inventario en consignación,Sin asignar,202509,202512,1.0,1.0,1.0,0.0,completo
-TRIBEE,SET X 3 VELAS BEELA,ALEJANDRA ANDRADE,138967,323908bf-dd7b-4a6b-ae50-75fbdf104072,CONSIG01 - Inventario en consignación,Sin asignar,202512,202602,4.0,3.0,3.0,0.0,completo
+TRIBEE,TRIO BEELAS DE MIEL,ALEJANDRA ANDRADE,138967,323908bf-dd7b-4a6b-ae50-75fbdf104072,CONSIG01 - Inventario en consignación,Sin asignar,202603,202602,5.0,3.0,3.0,0.0,completo
 V-arte-1.5,SET*3 VELA ARTESANAL LARGA DE 25*1.5 CM,ELSA URIBE,26824,0a1f4ccc-8ddc-47aa-9433-061696d04eca,CONSIG01 - Inventario en consignación,Sin asignar,202512,202512,1.0,1.0,1.0,0.0,completo
-V001,Vela Copa Artesanal 280 g - Playa Bonita,HILALMA,29902,865d8817-eade-4506-8a92-1c4df52bd9cd,CONSIG01 - Inventario en consignación,Sin asignar,202603,202603,14.0,12.0,12.0,0.0,completo
+V001,Vela Copa Artesanal 280 g - Playa Bonita,HILALMA,29902,865d8817-eade-4506-8a92-1c4df52bd9cd,CONSIG01 - Inventario en consignación,Sin asignar,202603,202603,13.0,12.0,12.0,0.0,completo
 V002,Vela Copa Artesanal 280 g - Palma Real,HILALMA,29901,05613d9d-ce1e-4238-a92c-990b5af0fcc6,CONSIG01 - Inventario en consignación,Sin asignar,202603,202603,15.0,12.0,12.0,0.0,completo
 V004,Vela Copa Artesanal 280 gGranada,HILALMA,30053,7f5c47f9-7947-447e-9ce1-eaa703418241,CONSIG01 - Inventario en consignación,Sin asignar,202603,202603,14.0,6.0,6.0,0.0,completo
 V0096,Vela Copa Artesanal 280 g - Alma de Oriente,HILALMA,103330,9718173f-1542-4c39-9df8-eed884fda2d0,CONSIG01 - Inventario en consignación,Sin asignar,202603,202603,8.0,5.0,5.0,0.0,completo
 V0097,Vela Copa Artesanal 280 g - Ambar de Nuit,HILALMA,103331,b24a6d17-42e2-4ed4-b6b9-7281de953f77,CONSIG01 - Inventario en consignación,Sin asignar,202603,202602,14.0,11.0,11.0,0.0,completo
-VAR032,Difusor Varitas 100 mL - Palma Real,Hilalma,103479,981d5542-5fc5-4964-b5fe-f9f11e008f0b,CONSIG01 - Inventario en consignación,Sin asignar,202603,202602,3.0,1.0,1.0,0.0,completo
+VAR032,Difusor Varitas 100 mL - Palma Real,Hilalma,103479,981d5542-5fc5-4964-b5fe-f9f11e008f0b,CONSIG01 - Inventario en consignación,Sin asignar,202603,202602,2.0,1.0,1.0,0.0,completo
 VAR033,Difusor Varitas 100 mL - Dulce de Vainilla,Hilalma,103478,1f500278-4848-4fe5-832f-d5874649bff1,CONSIG01 - Inventario en consignación,Sin asignar,202510,202602,3.0,3.0,3.0,0.0,completo
 VAR037,Difusor Varitas 100 mL - Magia Oriental,HILALMA,29894,8e58f96f-a9be-482f-a6e6-bb20159a745f,CONSIG01 - Inventario en consignación,Sin asignar,202603,202512,3.0,1.0,1.0,0.0,completo
 VAR038,Difusor Varitas 100 mL - Jardín Rosé,HILALMA,29893,6ebd682c-73e5-4533-bbc4-29f4c5056561,CONSIG01 - Inventario en consignación,Sin asignar,202506,202602,2.0,2.0,2.0,0.0,completo
@@ -432,6 +432,8 @@ VI-VA-BR-NA-SE-04,VASO BRUMA NATURAL SET X4,ZORRO Y JAGUAR,28832,56bf8a4e-a1b2-4
 01010706,CAMISA MANGA LARGA CELESTE XXL,LEKAMP SAS,91924,079c3e59-b8ab-4c59-9af4-b49f153f9a27,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 1060,SAN JUAN NUDOS 15 X 15,ARBIF,23366,fd4d9132-3b3d-497d-b5c8-80e4e3f5ec8c,CONSIG01 - Inventario en consignación,Sin asignar,,202511,0.0,2.0,0.0,2.0,sin_stock
 1121,SAN JUAN FRUTERO CUADROS 35X12,ARBIF,139133,99353036-19ac-4f5f-a04d-484c7ed6fff2,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+1761,MATA CORAZON DE HOMBRE,LOS CEREZOS,8517,5ee9a390-bcac-44fd-a0ed-4837acc9d651,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,3.0,0.0,3.0,sin_stock
+2001-4,VELA SILENCIO,LA VERANERA,6070,6aba3231-16ae-43ed-8a4d-cf63d80496da,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,3.0,0.0,3.0,sin_stock
 200610ARENA,MATERA MAO LISA ARENA,FORA,78366,165687fc-95d7-4564-b6b7-e99450c7b9cd,CONSIG01 - Inventario en consignación,Sin asignar,,202505,0.0,1.0,0.0,1.0,sin_stock
 3103,SANDONA 17X17 ZIGZAG BLANCO Y VINOTINTO,ARBIF,139129,522d1bc1-10dc-4621-a5da-3c363a47276a,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 3132,SANDONA 15X15 CUADROS BLANCO Y AZUL,ARBIF,139127,5b492ebc-5f36-418c-87dd-b9015623c6e5,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
@@ -443,38 +445,72 @@ VI-VA-BR-NA-SE-04,VASO BRUMA NATURAL SET X4,ZORRO Y JAGUAR,28832,56bf8a4e-a1b2-4
 4991,BARI SERVILLETERO MORENO NATURAL,ARBIF,139105,4b6699da-0a31-4417-ae70-06846a197bc1,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,12.0,0.0,12.0,sin_stock
 4993,BARI SERVILLETERO AZUL M,ARBIF,139107,13702b27-b667-416d-85e2-4e892f7505e1,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,8.0,0.0,8.0,sin_stock
 4994,BARI PORTAVASOS CROCHET MORENO NATURAL,ARBIF,139118,adbc698b-164b-482e-b60f-c3e59d9ad447,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,6.0,0.0,6.0,sin_stock
+70124262,SET X 4 VELA SIN AROMA 8 CM BEIGE,IKEA,62740,df479e8a-d9bb-4a89-af61-14721d6460f0,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,2.0,0.0,2.0,sin_stock
 90*57,FOTO- CEBRA SIMETRIA,MARTIN JARAMILLO,29804,a3ecc248-e2db-408e-b237-a4debe37a3b0,CONSIG01 - Inventario en consignación,Sin asignar,,202507,0.0,1.0,0.0,1.0,sin_stock
 AHD-PF-01,PUFF SILO LISO,ALELI,79907,c6459e24-235c-47eb-b75a-90b819ac2c3e,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 AQ018,TOPOS TENNIS MEDIOS,FENOMENA,126472,40709435-3841-4f2c-a1d5-c22e247129f9,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
+AQUACLEAN,ASTON271,YAKAR,114818,ace650ee-a4c2-44e2-a92f-5bda361dbe60,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,1.0,0.0,1.0,sin_stock
 ARTEMISABOWL,ARTEMISA BOWL,KALA Y GRECO,114714,fd6be80c-398c-4608-a3cf-81312f5cb63e,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+BANCACORDON1.2,BANCA AICHUCHI [1.2M] CORDON CIENAGUERO,TUCURINCA,103553,5aa30eed-6079-4ad5-9da9-ed0631229d08,CONSIG01 - Inventario en consignación,Sin asignar,,202510,0.0,1.0,0.0,1.0,sin_stock
 BBCMNB,BARI BOLSO CACTUS MORENO NATURAL Y BLANCO,ARBIF,27434,7984c670-31af-4558-a438-baf293598aed,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 C1032E002,1032 EARCUFF,FENOMENA,91988,a1b9738b-b07b-4fde-8e9a-6bfdc8552e64,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 CAMMSAGEROSE,CAMINO DE MESA SAGE ROSE 200 X 42 CMS,ABITA,127733,681e9f1b-8f43-4a2b-bd8e-7e283db20cde,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 CARTUSELVAJAGUAR,CARTUCHERA DE LONA CON DISEÑO SELVA JAGUAR,ESCRIBANA,79971,9fde3013-53b1-4548-b2ef-e2689642b2c7,CONSIG01 - Inventario en consignación,Sin asignar,,202508,0.0,1.0,0.0,1.0,sin_stock
 CBURSA210X42,CAMINO BURSA 210 X 42,ABITA,23516,5377c854-4c54-4cd3-bb28-808813a1ba80,CONSIG01 - Inventario en consignación,Sin asignar,,202501,0.0,1.0,0.0,1.0,sin_stock
+CE154IVAR,COJIN ELITE  IVAR  154 T.45*45,TEXTILES 1X1,9080,a547e23a-ea6e-4eee-9c94-609fca600ccf,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,1.0,0.0,1.0,sin_stock
+COJELITHA,COJIN ELITE  HANS 156 T.45X45,,4881,b53f4b85-5854-46aa-b00c-2f140c74a7a0,CONSIG01 - Inventario en consignación,Sin asignar,,202507,0.0,1.0,0.0,1.0,sin_stock
 COJINUMAVERDE,COJIN UMA VERDE,ABITA,102781,5c282b92-f6be-4fab-854c-5e246a09d64d,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 COLPOL,COLUMNA POLIN,ELSA URIBE,80179,6db2b2ca-fca2-421b-b099-3da857f375e8,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 CTALAVERA250X67,CAMINO TALAVERA 250 X 67,ABITA,23429,78c1ed01-b163-4d37-8059-29fcd1cc4cb6,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 CURABA250*67,CAMINO URABA 250*67,ABITA,125600,a51a8400-103c-4d6a-ae20-d963d3ebd816,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,1.0,0.0,1.0,sin_stock
+EIP,Escritorio Indie Presidencial,COLDISEÑO,78007,2c6a519c-0c5a-4d9f-ad15-489859cecf3f,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
+ELITCYG170,COJIN ELITE  CYGNUS  170 T.45X45 MULTI,,4880,a28eceea-c6e6-4a54-ab18-91454f98cf61,CONSIG01 - Inventario en consignación,Sin asignar,,202508,0.0,1.0,0.0,1.0,sin_stock
 EMBALG,EMBUDO ALGODON,VERDE NEGRO,76297,ae8e47f2-cb77-4535-b9a1-2937c9b7b5e1,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+ENCHAPEBIBLIO,ENCHAPE BIBLIOTECA,ANTONIO JOSE BUITRAGO GARCIA,77303,26febf0b-e743-45fe-9ffc-338f15d471a9,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
+EP,ENTREPAÑOS,ANTONIO BUITRAGO,102695,1da43145-f4fb-45dc-8498-a5fe29ac540c,CONSIG01 - Inventario en consignación,Sin asignar,,202506,0.0,1.0,0.0,1.0,sin_stock
+ESCRITINDIE,ESCRITORIO INDIE PRESIDENCIAL FLORMORADO,COLDISEÑO,77301,f8fbc78e-58e6-4634-ac51-9d15110349c7,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,1.0,0.0,1.0,sin_stock
 ESPNIE,ESPRESSO NIEVE,VERDE NEGRO,77166,c44fd3c1-812f-4237-a060-685a160feea4,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 ESPPANT,Espresso Pantano,VERDE  NEGRO,77168,7a0ea099-6cf4-4c91-b480-00ab0f37b49a,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,2.0,0.0,2.0,sin_stock
+GNABBAS,"Cesta, 32x35x32 cm",IKEA,78002,41e76c13-cd3f-4482-beb9-7a84c3ccbd99,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,3.0,0.0,3.0,sin_stock
+GUARESC,GUARDAESCOBAS,ANTONIO JOSE BUITRAGO,78008,d98fff92-d9fb-4dd0-b110-39ab63de6596,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
 IndividualLaberintos,Individual Laberintos set x 4,ABITA,80711,7bbb124b-3df6-4d40-bc18-8417e01b2166,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 JARMOSC,JARRON MOSCU,OBRA NEGRA,23511,bab8838c-40e2-47c8-8484-b6c1b8350270,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,1.0,0.0,1.0,sin_stock
+JARRAVIVIN1.2L,"JARRA VIDRIO VINTAGE 1,2 LTS",ALUMAR,16578,c6fb91dc-dd9b-4ff9-b690-208b50f617c7,CONSIG01 - Inventario en consignación,Sin asignar,,202508,0.0,1.0,0.0,1.0,sin_stock
 JG50616-001,SET 6 VASOS VIDRIO ACANALADO 14 ONZAS,ALUMAR SAS,138926,9a0998a2-b279-4442-8b93-87b6bda20758,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,6.0,0.0,6.0,sin_stock
+KALLAX,"Estantería, Efecto roble tinte blanco, 77x1",IKEA,78001,a1eeea90-65e7-4738-a37a-d054d369ccd0,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
 KF002,KIT DE FRUTAS PARTIDAS,TINELA,27677,463bca0c-3bbe-4954-98e0-53ad1308fe5b,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+KINGBED,CAMA ALISTONADA CON BASE KING,ANTONIO BUITRAGO,102696,c74904b2-91ec-45b3-8531-93753bafe736,CONSIG01 - Inventario en consignación,Sin asignar,,202506,0.0,1.0,0.0,1.0,sin_stock
+LAMMV,LÁMINA MUSH VERDE,AMANECER,64085,f8bf901a-cae6-4a4c-8c26-4a58c220e2a3,CONSIG01 - Inventario en consignación,Sin asignar,,202507,0.0,1.0,0.0,1.0,sin_stock
 LUPLP002,GAFAS DE SOL LUP ARMY GREEN,SAJU,126850,25cfaf50-3ea4-4884-b219-e5b86bed8a14,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 Lampara-de-piso-zinto,Lampara de piso Zinto,TUCURINCA CONSIGNACION,139082,271ab578-bd65-4411-8aad-ea266c32a1f3,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
+MAGDALENA-ARMLESS-BUTACO,BUTACO MAGDALENA ARMLESS TAPIZADO CORDON CIENAGUERO,TUCURINCA,114819,2b2f1f2a-2248-43fb-ba64-b65d2cd339d2,CONSIG01 - Inventario en consignación,Sin asignar,,202508,0.0,3.0,0.0,3.0,sin_stock
 MALAB220*150,MANTEL LABERINTOS 220 x 150,ABITA,24221,d3d56a59-b953-4c4c-b482-e1b276de0b00,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 MANDRAGO220*150,MANTEL DRAGONFLIES 220*150,ABITA,40821,ddc7d892-9620-4e1f-99a6-f3255be6f6ec,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 MANTELBERENJENA220X150,Mantel Paralel Berenjena 220x150,ABITA,114972,3eeb7845-5823-4bb1-bca2-250ab9a63080,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 MANTELHIEDRA,Mantel Hiedra 250x150,ABITA,77359,9fe71465-9885-4863-adef-9904db89deea,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,2.0,0.0,2.0,sin_stock
 MANTELHONEY,Mantel Honeybee 220x150,ABITA,77356,b217c26a-b603-416a-9156-ec2b4faa3c19,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
+MATCORDP14,MATA CORDATUM P14,LOS CEREZOS,25586,c8ef52e4-024b-40c0-8c31-16f496d4efed,CONSIG01 - Inventario en consignación,Sin asignar,,202505,0.0,2.0,0.0,2.0,sin_stock
 MATERAADRIADES,MATERA ADRIADES,KALA Y GRECO,114715,dafe33fb-6650-4e62-bae4-4f7a8093c12e,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,1.0,0.0,1.0,sin_stock
+MAYESINTE,Maye [Silla] Tejido Sintético,TUCURINCA,126157,1a52379f-b5b2-49c3-bc53-564f740cc4c8,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,2.0,0.0,2.0,sin_stock
+MESACAMDEN,MESA CAMDEN LARGO 180,,115036,6852c69b-d6d1-4b9f-b566-95540500f019,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,1.0,0.0,1.0,sin_stock
 MESATP,MESA NSAMAN PEQUEÑA,Mesas Naturales,103834,7dd59f73-6275-4c6d-96a0-ecef3f9018d8,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 MINIJARRANOCHE,MINI JARRA NOCHE,ZORRO Y JAGUAR,80941,3a2d12e6-f4bd-4c42-bd0a-2c25f7a149b1,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,2.0,0.0,2.0,sin_stock
+MONTBED,CAMA MONTESSORI SEMIDOBLE,ANTONIO BUITRAGO,102693,77789756-36f6-410c-9e6e-de3e491cdba3,CONSIG01 - Inventario en consignación,Sin asignar,,202506,0.0,1.0,0.0,1.0,sin_stock
+MP,MATA MONSTERA P14,,8515,d15f1b4e-576d-450e-b225-5fcf9331e621,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
 MUG15ONZASNIEVE,MUG 15 ONZAS NIEVE,VERDE NEGRO,115079,e75ec677-139b-4703-948c-9d5ee724bd1a,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+MUGS,MUG SELVA,VERDE NEGRO,76298,0ec0b799-3861-4f93-b925-c92c869f8bbe,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,1.0,0.0,1.0,sin_stock
+MayeIIArmless[Silla],Maye II Armless [Silla],TUCURINCA,150307,9d025172-a71d-4be5-8289-b9769a42c603,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,4.0,0.0,4.0,sin_stock
+MayeII[Silla],Maye II [Silla],TUCURINCA,150306,0989b169-4554-41bb-8829-9c361c4eb5e2,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,2.0,0.0,2.0,sin_stock
+OCT-DK80005LLZD,SET 6 COPAS ACANALADAS AMBAR,ALUMAR,126356,705403bf-2392-4ab4-b1b9-021c600919d5,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,1.0,0.0,1.0,sin_stock
+OCT-DK80006CB,SET 4 COPAS ACANALADAS NEGRO CHAMPAÑA 5.4 ONZAS-14921,ALUMAR,77440,d7d517aa-4aee-441d-a84b-7528795032f1,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,1.0,0.0,1.0,sin_stock
+OCT-DKC5015-GREEN,SET 6 COPAS VINO AGUA CALADA VERDE,ALUMAR,22271,7ff07a79-a45c-4d5f-876e-0bbb74fb53bd,CONSIG01 - Inventario en consignación,Sin asignar,,202510,0.0,3.0,0.0,3.0,sin_stock
+OCT-K80005L,SET 4 VASOS ACANALADOS TRANSPARENTES,ALUMAR,40468,e8329c38-65cb-4eda-bb56-49e57fa4eac3,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,22.0,0.0,22.0,sin_stock
 PETOV,Peto Verde,BYO,62049,199ad6f1-c1f5-45e0-b351-b9ef440f46c2,CONSIG01 - Inventario en consignación,Sin asignar,,202506,0.0,1.0,0.0,1.0,sin_stock
+PHILOCOVER,PHILOENDRO CONGO VERDE GRANDE,,8965,8f66a6a7-97ef-4190-acca-63b4bb474f10,CONSIG01 - Inventario en consignación,Sin asignar,,202507,0.0,1.0,0.0,1.0,sin_stock
+PINMUB,PINTURA MUEBLE TV,ANTONIO JOSE BUITRAGO,78009,1a36295b-cddc-4e61-8131-c535bb8147a9,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
+PLCAU,CAUCHO COMUN,VIVERO LOS CEREZOS,77998,dba4fd26-5595-4170-9daa-749c21c1819c,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
+POLTOTTO,POLTRONA OTTOMANO C1,COLDISEÑO,125601,222765fd-196f-4a5c-b045-9cf9db8522a3,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,2.0,0.0,2.0,sin_stock
+PONCHOURBANMOSAICGREEN,PONCHO MICROFIBRA Urban Mosaic Green,PONCHO KIDZ PREC,78072,827ffb2b-03b9-4a3a-8db1-3487def58e65,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 PONMICPP,PONCHO MICROFIBRA Pixel Party Talla 2 a 5,PONCHO KIDZ,139229,385755ef-7e58-488c-a429-2ab1d2e0596d,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,1.0,0.0,1.0,sin_stock
 PRE002,PROVIDENCIAMIDROUND/EARRIN,FENOMENA,63310,3f17d85a-0482-4a52-a504-a5ad4ca22df0,CONSIG01 - Inventario en consignación,Sin asignar,,202503,0.0,1.0,0.0,1.0,sin_stock
 REF002V,JARDINERA ADA VERDE OLIVA 3 A 6 MESES,LA TUTU,139379,0b8adeb0-3929-4a89-85ef-2f6a1d700d35,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
@@ -485,18 +521,29 @@ RL014,Refill agua de linos 1000 mL - Playa Bonita,HILALMA,77270,de062f4a-ef44-4d
 RL016,Refill agua de linos 1000 mL - Dulce de Vainilla,HILALMA,77264,88a9939a-2373-42c2-95f8-04e9d4ee2e1e,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 RL019,Refill agua de linos 1000 mL - Watermelon Sugar,HILALMA,77271,0ff0264e-3989-452c-be4a-a85fadd09e7c,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 RO015,TOPOS CORONA,FENOMENA,139285,66b7bdaf-055c-4d88-abb2-4ffd0fcd106b,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,1.0,0.0,1.0,sin_stock
+SALSAEXPO,SALSERA BARRO,Expo Artesano,103808,008136fe-5539-4157-9369-d7dc24e3d191,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,10.0,0.0,10.0,sin_stock
 SALSIL2006,Salva Mugre Rosa,SAJU,63913,6a93ce55-dd3e-4568-95d8-b830206e7de1,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 SAMANPATAHIERRO,COMEDOR SAMAN PATAS METALICAS,MESAS NATURALES,128084,a53f66ad-7708-41e1-af12-af4a3395deda,CONSIG01 - Inventario en consignación,Sin asignar,,202511,0.0,1.0,0.0,1.0,sin_stock
 SANJBACUA20X20,SAN JUAN BARRIL CUADROS 20 X 20,ARBIF,23373,1695e564-4f06-4ee9-a619-3b8cf3d64d56,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+SBG,SOPORTE GRANDE MATERA,VIVERO LOS CEREZOS,78006,41d07d33-2a46-4612-b047-f045371257da,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
+SBP,SOPORTE PEQUEÑO MATERA,VIVERO LOS CEREZOS,78005,a099ebb4-d261-4eea-aa9b-e27537d59f11,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
 SERVIFLORABEIGE,Servilletero Flora Beige set x 4,ABITA,77362,e1a4cecf-2a8a-47a3-ac43-db2a7b01937e,CONSIG01 - Inventario en consignación,Sin asignar,,202507,0.0,1.0,0.0,1.0,sin_stock
+SETVEV,SETX3 VELAS ESPIRAL VERDE,FOLIES,11687,33404867-6810-4514-854c-83289da2fc23,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,1.0,0.0,1.0,sin_stock
 SETX4VI-VA-OC-BI-SE-VASOSOCASO,VASO OCASO SET X4,ZORRO Y JAGUAR,80938,50232a39-383c-4c04-bb1d-95e0b31f6d88,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,1.0,0.0,1.0,sin_stock
+SOFOTTO,SOFA OTTMANO 3 PUESTOS T3,COLDISEÑO,125602,a3de2b50-a457-4a1d-bffd-5b8dea2ef20b,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,2.0,0.0,2.0,sin_stock
+SOLVEVER,SOLO VERANO VERDE,FOLIES,27034,5692bc96-5abf-4383-ba64-91125b61e8c9,CONSIG01 - Inventario en consignación,Sin asignar,,202509,0.0,1.0,0.0,1.0,sin_stock
+SOP31CM,SOPORTE DE PARED 31CM,OCHO INFINITO,78010,2aa0f427-d1cd-4e1c-8b73-944df9e2c25e,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
+STARREKLINTE,"Tapete, beige/negro, 155x220 cm",IKEA,78000,a9769dbd-c6a4-4930-9dc4-46f7908b5aa6,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
 TAR-REG-001,TARJETAS DE NAVIDAD CLASSIC CHRISTMAS,PAPILU,127971,2d973d7f-3361-4761-a6cc-fd31b8df39e7,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,2.0,0.0,2.0,sin_stock
 TAZAL,TAZA ALGODON,VERDE NEGRO,76304,96e8fe3c-635f-43d6-9220-2411ff5aa94f,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+TAZAROMBO,TAZA ROMBO,VERDE NEGRO PRECOMPRA,139065,e5932eab-b7d5-4659-9d48-8e3706025fd6,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,15.0,0.0,15.0,sin_stock
 TAZNIE,Taza Nieve,VERDE NEGRO,40762,93f8ef87-ed5c-44cf-97a4-0a715392e0a2,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,1.0,0.0,1.0,sin_stock
 TOALLAADULTOSTRIPEMOTION,TOALLA ADULTO STRIPE MOTION,PONCHO,114859,070a2e39-4c8f-421a-a112-2261cff9506f,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,1.0,0.0,1.0,sin_stock
+TOALLAMICROMOSAICGR,Toalla Microfibra Kidz - Urban Mosaic Green,PONCHO KIDZ,139438,9fbffe14-cd72-487d-85ef-d8ab0ebd64be,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,1.0,0.0,1.0,sin_stock
 TORTIIKATROJA,TORTILLERO CON CANASTA IKAT ROJA,ABITA,126197,2f291339-4b68-4346-919e-78272420fa3c,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 TORTILLEROCANASTAPALMAAGUA,TORTILLERO CON CANASTA PALMAS AGUA,ABITA,126200,45c73e9a-07e9-4a00-b9ad-09d1e985cb70,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 V155,Vela Artesanal 300 g - Aurora en Fiesta,HILALMA,139099,2515ca4c-80da-4715-abcf-d5c01f7ef541,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+VANITY,TOCADOR Y MUEBLE TV,ANTONIO BUITRAGO,114820,604e54b1-69c9-45e9-af0d-d40ae585d51f,CONSIG01 - Inventario en consignación,Sin asignar,,202508,0.0,1.0,0.0,1.0,sin_stock
 VAR036,Difusor Varitas 100 mL - Watermelon Sugar,Hilalma,103480,a2d4e4d4-36d3-41d2-af56-07f4dc2a4986,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,2.0,0.0,2.0,sin_stock
 VAR076,Refill Difusor Varitas 300 mL - Dulce de Vainilla,HILALMA,77273,413711d2-3692-4633-ab0e-80406fdfcb30,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 VAR077,Refill Difusor Varitas 300 mL - Granada,HILALMA,77274,0c420af4-c610-4e9a-b60b-4e4a5ff75979,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
@@ -512,31 +559,45 @@ VESTT,Vestido Terra Terracota,BYO,62042,fcbcde1d-3557-4047-97c9-81cb7dd599e1,CON
 VI-FL-LL-NA-UN-01,FLORERO DE LLORENTE,ZORRO Y JAGUAR,23487,11f9d04d-2ed8-4d1f-8770-da08f3bb6610,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,2.0,0.0,2.0,sin_stock
 VI-SH-OC-AM-SE-04,SHOT ANOCHECER AMBAR SET X4,ZORRO Y JAGUAR,80943,4ce63a9e-1237-4d02-9c8d-17c37295a74e,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,1.0,0.0,1.0,sin_stock
 VI-SH-OC-NA-SE-04,SHOT ATARDECER NATURAL SET X4,ZORRO Y JAGUAR,80942,12e96ca9-5536-4243-b938-dc0a58e373a6,CONSIG01 - Inventario en consignación,Sin asignar,,202603,0.0,1.0,0.0,1.0,sin_stock
+WIC,MUEBLE VESTIER A MEDIDA,ANTONIO BUITRAGO,102694,8fa9206f-ca1c-4d44-960a-5db66bf92b49,CONSIG01 - Inventario en consignación,Sin asignar,,202506,0.0,1.0,0.0,1.0,sin_stock
+banca-tucurinca,Banca Tucurinca,TUCURINCA,80114,72195d03-c4ae-4b0e-a12f-6d3f37cd536c,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,1.0,0.0,1.0,sin_stock
 blinoverl,BERMUDA LINO VERDE L,LUCK&LOAD,139963,b9e13801-471d-4592-bc7f-e6602b75e680,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
+butaco-cubico,Butaco Cubico Sintetico,TUCURINCA,139084,8bb6afd7-24d7-456e-9bcd-40e01adcf251,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,4.0,0.0,4.0,sin_stock
 buznegl,BUZO CUELLO REDONDO NEGRO L,LUCK&LOAD,127538,729aa2f6-9d61-4c73-95c4-a8723162610a,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 buznegm,BUZO CUELLO REDONDO NEGRO M,LUCK&LOAD,127539,cd008cf6-d04e-4e26-b6ba-f8d5e6f772d5,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 clinoazul,CAMISA LINO AZUL L,LUCK&LOAD,139967,4307a46c-5051-431c-a284-b6d2ee19b80d,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 clinoverl,CAMISA LINO VERDE L,LUCK&LOAD,139964,f4e1cb91-c28c-4b43-a2f0-71e0d59377e1,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
+comedor-igneo,Comedor Igneo,TUCURINCA,80704,43cfc5cc-f2ae-4640-849a-967130c15c7c,CONSIG01 - Inventario en consignación,Sin asignar,,202505,0.0,1.0,0.0,1.0,sin_stock
 denbeim,CHAQUETA OBRERA BEIGE M,LUCK&LOAD,139484,4922d5d1-0b0c-44e8-ae63-04b95d6323a2,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 detnegm,CHAQUETA DETROIT NEGRA M,LUCK&LOAD,127555,aa95b427-8363-4ce4-b652-3e31585ddcb3,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,2.0,0.0,2.0,sin_stock
 harazul,CHAQUETA HARRIGTON AZUL L,LUCK&LOAD,128142,f41ec161-9a57-470f-85e7-77cab600f070,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 harnegl,CHAQUETA HARRIGTON NEGRA L,LUCK&LOAD,128148,4982fcc6-e0fe-4d15-b327-342d6c206d3e,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 harverm,CHAQUETA HARRTINGTON VERDE M,LUCK&LOAD,128150,151de682-8853-48ac-b8eb-2b00f18e1bb6,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
+lack,LACK Mesa de centro,IKEA,77999,0e3e12e7-9783-49ce-9a49-c82ef8cc2acb,CONSIG01 - Inventario en consignación,Sin asignar,,202504,0.0,1.0,0.0,1.0,sin_stock
+lampara-tucurinca,LAMPARA TUCURINCA Diametro 50cm,TUCURINCA,150214,e05c783c-68e8-4c57-9dac-f12103eb203a,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
+magdalena-armless-butaco-,Magdalena Armless [Butaco],,138969,257bd900-fdd3-41d0-8155-f0af935c0f3f,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,5.0,0.0,5.0,sin_stock
+magdalena-armless-silla-T,Magdalena Armless [Silla],,138970,cf9abf2a-af8f-4de6-8f8c-eefba75ed6f9,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,30.0,0.0,30.0,sin_stock
+magdalena-silla,SILLA MAGDALENA [CORDON + TAPIZADO],TUCURINCA,115124,f714e36e-f430-4a7e-ae16-a9fd7f7e07a9,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,2.0,0.0,2.0,sin_stock
 mantelbotanica150x150,Mantel Botanica 150x150,ABITA,114973,030a2113-e9c0-41f4-a579-ac84222da3ca,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 mantelchapolera220x150,Mantel Chapolera 220x150,ABITA,80703,00573cdd-d593-4f8b-afb7-c127ee2d70bc,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
+maye-butaco,Maye 65 [Butaco] Sintético,TUCURINCA,78124,cc4ec4b5-1cd7-439f-9b79-5742dc9a8f7f,CONSIG01 - Inventario en consignación,Sin asignar,,202506,0.0,4.0,0.0,4.0,sin_stock
+maye-ii-armless-butaco,MAYE II ARMLESS [BUTACO],TUCURINCA,126525,cf990e2c-b182-45dd-aefb-baf768672930,CONSIG01 - Inventario en consignación,Sin asignar,,202510,0.0,3.0,0.0,3.0,sin_stock
 medcver,MEDIA CORTA VERDE,LUCK&LOAD,127585,1266bb55-34d8-4d91-ba8b-1f6f9b80a93c,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 milbeil,CHAQUETA MILITAR BEIGE L,LUCK&LOAD,139403,b59c4e09-aff4-4515-9da7-d11cd42b509e,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 milbeim,CHAQUETA MILITAR BEIGE M,LUCK&LOAD,139402,23622310-3c81-43e6-a408-162a0695a38d,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 milbeis,CHAQUETA MILITAR BEIGE S,LUCK&LOAD,139401,c7955729-77c9-4883-b224-a7090db69dc4,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 milmils,CHAQUETA MILITAR MILITAR S,LUCK&LOAD,139334,517e5fa4-f0c1-46cb-9695-c600ca06c59c,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 milnegm,CHAQUETA MILITAR NEGRA M,LUCK&LOAD,139406,8c53f202-347f-4bee-929b-696da2edb0da,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+minicuadro,MINI CUADRO LÁMINA ESCRIBANA,,80116,556f8d50-cc6a-4371-9464-ee88e71266e6,CONSIG01 - Inventario en consignación,Sin asignar,,202512,0.0,6.0,0.0,6.0,sin_stock
 mlbblal,CAMISETA BLANCA CUELLO TRES BOTONES MANGA LARGA L,LUCK&LOAD,127599,55a189f5-822e-4811-b600-bf5d6db4b2c0,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 mlbnavl,CAMISETA NAVAL CUELLO TRES BOTONES MANGA LARGA L,LUCK&LOAD,127602,07e50f05-fdec-4d8d-aae9-75b387a0d88c,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 mlbnegl,CAMISETA NEGRA CUELLO TRES BOTONES MANGA LARGA L,LUCK&LOAD,127603,18428388-91ac-4247-bde2-876533c75cf9,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 mlbnegs,CAMISETA NEGRA CUELLO TRES BOTONES MANGA LARGA S,LUCK&LOAD,127605,2962a1f6-bf91-4a8c-8448-1cb72b94afd2,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 oxfcell,CAMISA OXFORD CELESTE L,LUCK&LOAD,127630,0ae34f5d-c7c9-48e4-af08-63165924e581,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+perchero-pio-pio,Perchero Pio Pio Cordon,TUCURINCA,139086,89571b91-e411-4770-b302-e823bfb4d931,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 polarel,POLO MANGA LARGA ARENA L,LUCK&LOAD,127636,4119a6d8-6be7-49b5-9172-85057aa12cb7,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 polarexs,POLO MANGA LARGA ARENA XS,LUCK&LOAD,127638,5a14a207-f2ec-4544-9d43-715b82c33fa6,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+poltrona-Mono,Poltrona Mono,TUCURINCA,139087,76ddf203-6944-478e-8a9f-bfa6337a98bf,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,8.0,0.0,8.0,sin_stock
 poltrona-skii-madera,Poltrona Skii Madera,TUCURINCA CONSIGNACION,139081,22af724d-600c-40c6-b040-38d7374b87a3,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,4.0,0.0,4.0,sin_stock
 polvins,POLO MANGA LARGA VINO S,LUCK&LOAD,127644,66fbbb13-4f74-424d-a084-3fd4f453bc41,CONSIG01 - Inventario en consignación,Sin asignar,,202601,0.0,1.0,0.0,1.0,sin_stock
 silla-apropiada,Apropiada [SILLA],TUCURINCA CONSIGNACION,139079,8a384d24-45b2-47e9-9513-5b8f6fc4b889,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,2.0,0.0,2.0,sin_stock
@@ -546,3 +607,4 @@ sinbolblas,CAMISETA BLANCA CUELLO REDONDO SIN BOLSILLO S,LUCK&LOAD,127654,9024ad
 sinbolnegm,CAMISETA NEGRA CUELLO REDONDO SIN BOLSILLO M,LUCK&LOAD,127656,24122de0-daea-4c25-be10-d0b755e7dbd7,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 sinbolrosm,CAMISETA ROSADA CUELLO REDONDO SIN BOLSILLO M,LUCK&LOAD,127658,3be2e30c-6f71-4b2b-9c95-6c8a9d6a330a,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
 sinbolross,CAMISETA ROSADA CUELLO REDONDO SIN BOLSILLO S,LUCK&LOAD,127659,fbbd93de-e348-4c7e-b903-e02a21173d08,CONSIG01 - Inventario en consignación,Sin asignar,,202602,0.0,1.0,0.0,1.0,sin_stock
+tsis,Tsis [Silla] Cordon Cienaguero,TUCURINCA,78156,8b57b132-bd25-450f-9569-55c08cdfe9c2,CONSIG01 - Inventario en consignación,Sin asignar,,202506,0.0,8.0,0.0,8.0,sin_stock
