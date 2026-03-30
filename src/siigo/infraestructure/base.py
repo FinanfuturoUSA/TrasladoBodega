@@ -2,7 +2,6 @@ from asyncio import Lock
 from enum import StrEnum
 from http import HTTPMethod
 from time import time
-from turtle import st
 from typing import cast, override
 
 from src.shared.infraestructure.httpclient.base import AuthenticatedClient
