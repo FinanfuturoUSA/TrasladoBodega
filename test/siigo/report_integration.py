@@ -15,7 +15,7 @@ def _assert_valid_report_response(resultado) -> None:
     assert resultado.resume.credit >= 0
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_movimiento_auxiliar_ultima_semana_laboral() -> None:
     client = ServicesSiigoReportClient()
     fecha_inicial, fecha_final = last_completed_workweek_range()

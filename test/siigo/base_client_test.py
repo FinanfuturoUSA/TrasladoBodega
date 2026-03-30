@@ -50,7 +50,7 @@ class BusinessErrorTypedClient(TypedClient):
             )
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_json_request_lanza_client_exception_en_http_error(monkeypatch):
     async def fake_request(self, *args, **kwargs):
         return httpx.Response(500, json={"message": "boom"})
@@ -76,7 +76,7 @@ async def test_json_request_lanza_client_exception_en_http_error(monkeypatch):
     assert exc_info.value.msg == "HTTP 500: Internal Server Error"
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_json_request_lanza_client_exception_en_error_de_negocio(monkeypatch):
     async def fake_request(self, *args, **kwargs):
         return httpx.Response(200, json={"success": False, "message": "boom"})
@@ -157,7 +157,7 @@ def test_client_exception_no_falla_con_payload_no_serializable_nativo():
     assert 'headers: {"authorization": "secret"}' in debug_repr
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_rate_limit_es_seguro_con_requests_concurrentes(monkeypatch):
     timestamps: list[float] = []
 

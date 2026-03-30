@@ -11,18 +11,20 @@ from unittest.mock import AsyncMock, patch
 import json
 import pytest
 
-from src.siigo.infraestructure.report import ServicesClient
+from src.siigo.infraestructure.services import ServicesSiigoReportClient
 from src.siigo.infraestructure.schema.report import ReportResponseSchema
 
 
 @pytest.fixture
 def client():
     """Retorna una instancia de ReportClient."""
-    return ServicesClient()
+    return ServicesSiigoReportClient()
 
 
-@pytest.mark.asyncio
-async def test_movimiento_auxiliar_envia_payload_correcto(client: ServicesClient):
+@pytest.mark.anyio
+async def test_movimiento_auxiliar_envia_payload_correcto(
+    client: ServicesSiigoReportClient,
+):
     """Verifica que el payload enviado a Siigo tenga la estructura requerida (ID 5405)."""
 
     # Mock de la respuesta mínima válida de Siigo
@@ -32,7 +34,11 @@ async def test_movimiento_auxiliar_envia_payload_correcto(client: ServicesClient
         "resume": {"Credit": 0.0, "Debit": 0.0},
     }
 
-    with patch.object(ServicesClient, "json_request", new_callable=AsyncMock) as mock_req:
+    with patch.object(
+        ServicesSiigoReportClient,
+        "json_request",
+        new_callable=AsyncMock,
+    ) as mock_req:
         mock_req.return_value = mock_response
 
         fecha_ini = date(2025, 12, 1)
@@ -83,9 +89,9 @@ async def test_movimiento_auxiliar_envia_payload_correcto(client: ServicesClient
         assert isinstance(resultado, ReportResponseSchema)
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_movimiento_auxiliar_usa_all_cuando_se_piden_todas_las_cuentas(
-    client: ServicesClient,
+    client: ServicesSiigoReportClient,
 ):
     mock_response = {
         "data": {"Value": {"Table": []}},
@@ -93,7 +99,11 @@ async def test_movimiento_auxiliar_usa_all_cuando_se_piden_todas_las_cuentas(
         "resume": {"Credit": 0.0, "Debit": 0.0},
     }
 
-    with patch.object(ServicesClient, "json_request", new_callable=AsyncMock) as mock_req:
+    with patch.object(
+        ServicesSiigoReportClient,
+        "json_request",
+        new_callable=AsyncMock,
+    ) as mock_req:
         mock_req.return_value = mock_response
 
         await client.movimiento_auxiliar(
@@ -110,8 +120,10 @@ async def test_movimiento_auxiliar_usa_all_cuando_se_piden_todas_las_cuentas(
         assert filtro_cuentas.value == ["ALL"]
 
 
-@pytest.mark.asyncio
-async def test_movimiento_auxiliar_incluye_periodo_13_en_cierre(client: ServicesClient):
+@pytest.mark.anyio
+async def test_movimiento_auxiliar_incluye_periodo_13_en_cierre(
+    client: ServicesSiigoReportClient,
+):
     """Si incluye_cierre es True para un año pasado, debe añadir el periodo 'YYYY13'."""
 
     mock_response = {
@@ -120,7 +132,11 @@ async def test_movimiento_auxiliar_incluye_periodo_13_en_cierre(client: Services
         "resume": {"Credit": 0, "Debit": 0},
     }
 
-    with patch.object(ServicesClient, "json_request", new_callable=AsyncMock) as mock_req:
+    with patch.object(
+        ServicesSiigoReportClient,
+        "json_request",
+        new_callable=AsyncMock,
+    ) as mock_req:
         mock_req.return_value = mock_response
         closed_year = date.today().year - 1
 
@@ -142,9 +158,9 @@ async def test_movimiento_auxiliar_incluye_periodo_13_en_cierre(client: Services
         assert f"{closed_year}13" in filtro_fechas.value
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_movimiento_auxiliar_falla_con_cierre_si_fecha_final_no_es_anterior_a_hoy(
-    client: ServicesClient,
+    client: ServicesSiigoReportClient,
 ):
     """Debe fallar si `fecha_final` no pertenece a un año ya cerrado."""
 
@@ -161,9 +177,9 @@ async def test_movimiento_auxiliar_falla_con_cierre_si_fecha_final_no_es_anterio
         )
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_movimiento_auxiliar_falla_con_cierre_si_fecha_final_no_es_31_de_diciembre(
-    client: ServicesClient,
+    client: ServicesSiigoReportClient,
 ):
     """Debe fallar si se pide cierre para una fecha distinta al ultimo dia del año."""
 

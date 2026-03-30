@@ -1,10 +1,9 @@
 from datetime import date
-from enum import Enum
+from enum import Enum, StrEnum
 from http import HTTPMethod
 from typing import Any, override
 
 import httpx
-from _typeshed import StrEnum
 
 from src.shared.infraestructure.httpclient.request import JsonRequest, TypedJsonRequest
 from src.siigo.infraestructure.base import BaseSiigoClient

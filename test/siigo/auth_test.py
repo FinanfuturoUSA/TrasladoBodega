@@ -43,7 +43,7 @@ def client_raw_token() -> BaseSiigoClient:
 # ── Pruebas de auth() ──────────────────────────────────────────────────
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_auth_returns_valid_response(client: BaseSiigoClient):
     """auth() debe retornar un AuthResponseSchema con todos los campos."""
     response = await client.auth()
@@ -56,7 +56,7 @@ async def test_auth_returns_valid_response(client: BaseSiigoClient):
     assert response.scope is not None, "scope debe existir"
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_auth_sets_bearer_header(client: BaseSiigoClient):
     """Con token_type=True, el header Authorization debe tener 'Bearer <token>'."""
     response = await client.auth()
@@ -66,7 +66,7 @@ async def test_auth_sets_bearer_header(client: BaseSiigoClient):
     assert client.authorization == expected
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_auth_sets_raw_token_header(client_raw_token: BaseSiigoClient):
     """Con token_type=False, el header Authorization solo debe contener el token."""
     response = await client_raw_token.auth()
@@ -78,7 +78,7 @@ async def test_auth_sets_raw_token_header(client_raw_token: BaseSiigoClient):
     )
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_auth_sets_expiration(client: BaseSiigoClient):
     """auth() debe fijar __expires_at en el futuro (con 60 s de margen)."""
     before = time()
@@ -95,7 +95,7 @@ async def test_auth_sets_expiration(client: BaseSiigoClient):
 # ── Pruebas de _ensure_valid_token() ──────────────────────────────────
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_ensure_valid_token_authenticates_when_empty(client: BaseSiigoClient):
     """Si no hay token, _ensure_valid_token() debe llamar a auth()."""
     assert client.authorization == "", "Al inicio no debe haber token"
@@ -105,7 +105,7 @@ async def test_ensure_valid_token_authenticates_when_empty(client: BaseSiigoClie
     assert client.authorization != "", "Debe haberse obtenido un token"
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_ensure_valid_token_reuses_existing(client: BaseSiigoClient):
     """Si el token es válido, _ensure_valid_token() no debe cambiarlo."""
     await client._ensure_valid_token()
